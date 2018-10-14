@@ -1,4 +1,4 @@
-package com.sand_corporation.www.retrofitrxjava.Model;
+package com.sand_corporation.www.retrofitrxjava.RestAPI.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
