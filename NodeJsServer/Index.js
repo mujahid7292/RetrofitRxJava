@@ -9,34 +9,28 @@ var server = http.createServer((request,response)=>{
   response.writeHead(200,{"Content-Type":"application/json"});
   //Create data, which will be send with response
   //in this case it is json
-  var employeeList = {
-    "Employee_List":{{
-      "First_Name":"Saifullah Al",
-      "Last_Name":"Mujahid"
-    },
-    {
-      "First_Name":"Saifullah Al",
-      "Last_Name":"Mujahid"
-    },
-    {
-      "First_Name":"Saifullah Al",
-      "Last_Name":"Mujahid"
-    },
-    {
-      "First_Name":"Saifullah Al",
-      "Last_Name":"Mujahid"
-    },
-  }};
 
-  response.end(employeeList);
+  var employeeList = {
+    "Employee_List":[
+      {"First_Name":"John", "Last_Name":"Doe"}, 
+      {"First_Name":"Anna", "Last_Name":"Smith"},
+      {"First_Name":"Peter", "Last_Name":"Jones"},
+      {"First_Name":"John", "Last_Name":"Doe"}, 
+      {"First_Name":"Anna", "Last_Name":"Smith"},
+      {"First_Name":"Peter", "Last_Name":"Jones"}
+  ]
+    
+  };
+
+  response.end(JSON.stringify(employeeList));
 
 });
 
 
 //Now we will create a listener/port for this server
-server.listen(3000,'192.168.132.2');
+server.listen(3000,'192.168.99.106');
 //3000 = port number
-//127.0.0.1 = localhost
+//192.168.99.106 = this is my windows 10 computer IP address
 console.log('Now listening to port 3000');
 
 //Write "node Index.js" in terminal & Execute
